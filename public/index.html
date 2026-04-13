@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D.D Proxy</title>
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="preload" href="style.css" as="style">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preload" href="script.js" as="script">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <div class="hero-upper">
+        <div>
+          <p class="eyebrow">D.D Proxy</p>
+          <h1>My name is anderdingus</h1>
+          <p class="subtitle">A neon proxy gateway with built-in mini-games to explore when you need a break.</p>
+        </div>
+        <img class="hero-image" src="images/anderdingus.png" alt="My name is anderdingus" onerror="this.onerror=null; this.src='images/anderdingus.svg';">
+      </div>
+      <div class="actions">
+        <button class="tab-button active" data-tab="proxy">Proxy</button>
+        <button class="tab-button" data-tab="games">Games</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="proxy" class="panel active">
+        <div class="panel-card">
+          <h2>Proxy Launcher</h2>
+          <p>Enter a website or search term to browse through the proxy engine.</p>
+          <form id="proxyForm" class="proxy-form">
+            <input type="text" id="urlInput" placeholder="https://example.com or search term" required>
+            <button type="submit">Launch</button>
+          </form>
+          <div class="hint">If you enter plain text, it will search with Google.</div>
+        </div>
+        <iframe id="proxyFrame" src="" title="Proxy output" loading="lazy" allowfullscreen></iframe>
+        <button id="fullscreenBtn" class="control-button" style="margin-top: 10px;">Fullscreen Proxy</button>
+        <div class="upload-section">
+          <h3>Upload Custom HTML</h3>
+          <input class="file-input" type="file" id="proxyHtmlFileInput" accept=".html,.htm">
+          <button id="loadProxyHtmlBtn" class="control-button">Load HTML</button>
+        </div>
+        <div id="htmlContainer"></div>
+        <button id="htmlFullscreenBtn" class="control-button" style="margin-top: 10px;">Fullscreen HTML</button>
+      </section>
+
+      <section id="games" class="panel">
+        <div class="panel-card">
+          <h2>Stellar Arcade</h2>
+          <p>Play quick, built-in games without leaving the proxy dashboard.</p>
+          <div class="game-list" id="gameList"></div>
+          <div class="upload-section">
+            <h3>Upload Custom HTML Game</h3>
+            <input class="file-input" type="file" id="gameHtmlFileInput" accept=".html,.htm">
+            <button id="loadGameHtmlBtn" class="control-button">Load HTML Game</button>
+          </div>
+          <div class="button-row">
+            <button id="downloadGameBtn" class="control-button" type="button">Download Selected Game</button>
+            <button id="gameFullscreenBtn" class="control-button" type="button">Fullscreen Game</button>
+          </div>
+        </div>
+        <div class="game-shell">
+          <div id="gameInfo" class="game-info"></div>
+          <div id="gameBoard" class="game-board"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
